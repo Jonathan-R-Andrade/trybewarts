@@ -34,39 +34,40 @@ function atualizarContadorTextarea() {
 function obterMaterias(form) {
   const subjects = form.subject;
   const retorno = [];
-  for (const subject of subjects) {
+  subjects.forEach((subject) => {
     if (subject.checked) {
       retorno.push(subject.value);
     }
-  }
+  });
   return retorno.join(', ');
 }
 
 // Retorna um objeto com os dados no formulário
 function obterDadosFormulario(form) {
-  const dados = {};
-  dados["Nome"] = `${form.name.value} ${form.lastname.value}`;
-  dados["Email"] = form.email.value;
-  dados["Casa"] = form.house.value;
-  dados["Família"] = form.family.value;
-  dados["Matérias"] = obterMaterias(form);
-  dados["Avaliação"] = form.rate.value;
-  dados["Observações"] = form.comment.value;
+  const dados = {
+    Nome: `${form.name.value} ${form.lastname.value}`,
+    Email: form.email.value,
+    Casa: form.house.value,
+    Família: form.family.value,
+    Matérias: obterMaterias(form),
+    Avaliação: form.rate.value,
+    Observações: form.comment.value,
+  };
   return dados;
 }
 
 // Mostra os dados do formulário quando clicar no botão enviar
 function mostrarDadosFormulario(event) {
-  const form = event.target.form;
+  const { form } = event.target;
   const dados = obterDadosFormulario(form);
   form.innerHTML = '';
 
-  for (const dado in dados) {
+  Object.entries(dados).forEach((entrie) => {
     const p = document.createElement('p');
-    p.append(document.createTextNode(`${dado}: ${dados[dado]}`));
+    p.append(document.createTextNode(`${entrie[0]}: ${entrie[1]}`));
     form.appendChild(p);
-  }
-  event.target.innerHTML = "Voltar";
+  });
+  event.target.innerHTML = 'Voltar';
   form.appendChild(event.target);
 
   event.preventDefault();
