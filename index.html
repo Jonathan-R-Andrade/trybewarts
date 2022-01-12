@@ -13,7 +13,9 @@
 <body>
 
   <header class="header">
-    <img src="images/trybewarts-header-logo.svg" alt="Logotipo da Trybewarts" class="trybewarts-header-logo">
+    <a href="">
+      <img src="images/trybewarts-header-logo.svg" alt="Logotipo da Trybewarts" class="trybewarts-header-logo">
+    </a>
     <h1 id="trybewarts-header-title">Trybewarts</h1>
     <form action="" class="trybewarts-login">
       <input type="email" name="email" id="email" placeholder="Email">
@@ -23,58 +25,68 @@
   </header>
 
   <main>
-    <form action="" id="evaluation-form">
-      <div>
-        <input type="text" name="name" id="input-name" placeholder="Nome">
-        <input type="text" name="lastname" id="input-lastname" placeholder="Sobrenome">
+    <form action="" method="GET" id="evaluation-form">
+      <h3>Formulário de Avaliação</h3>
+
+      <div id="name-lastname-container">
+        <input type="text" name="name" id="input-name" class="default-input" placeholder="Nome">
+        <input type="text" name="lastname" id="input-lastname" class="default-input" placeholder="Sobrenome">
       </div>
 
-      <div>
-        <input type="email" name="email" id="input-email" placeholder="Email">
-        Casa: <select name="house" id="house">
-          <option value="Gitnória" id="gitnoria-house">Gitnória</option>
-          <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
-          <option value="Corvinode" id="corvinode-house">Corvinode</option>
-          <option value="Pytherina" id="pytherina-house">Pytherina</option>
-        </select>
+      <div id="email-house-container">
+        <input type="email" name="email" id="input-email" class="default-input" placeholder="Email">
+        <div id=house-container>
+          Casa: <select name="house" id="house" class="default-input">
+            <option value="Gitnória" id="gitnoria-house">Gitnória</option>
+            <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
+            <option value="Corvinode" id="corvinode-house">Corvinode</option>
+            <option value="Pytherina" id="pytherina-house">Pytherina</option>
+          </select>
+        </div>
       </div>
 
-      <div>
-        <p id=label-family>Qual sua família?</p>
-        <label for="family-frontend">
-          <input type="radio" name="family" value="Frontend" id="family-frontend">Família Frontend<br>
-        </label>
-        <label for="family-backend">
-          <input type="radio" name="family" value="Backend" id="family-backend">Família Backend<br>
-        </label>
-        <label for="family-fullStack">
-          <input type="radio" name="family" value="FullStack" id="family-fullStack">Família FullStack
-        </label>
+      <hr>
+
+      <div id="family-subject-container">
+        <div>
+          <p id=label-family>Qual sua família?</p>
+          <label for="family-frontend">
+            <input type="radio" name="family" value="Frontend" id="family-frontend">Família Frontend<br>
+          </label>
+          <label for="family-backend">
+            <input type="radio" name="family" value="Backend" id="family-backend">Família Backend<br>
+          </label>
+          <label for="family-fullStack">
+            <input type="radio" name="family" value="FullStack" id="family-fullStack">Família FullStack
+          </label>
+        </div>
+
+        <div>
+          <p id="label-content">Qual conteúdo você está com mais vontade de aprender?</p>
+          <label for="subject-hofs">
+            <input type="checkbox" name="subject" class="subject" id="subject-hofs" value="HoFs">HoFs
+          </label>
+          <label for="subject-jest">
+            <input type="checkbox" name="subject" class="subject" id="subject-jest" value="Jest">Jest
+          </label>
+          <label for="subject-promises">
+            <input type="checkbox" name="subject" class="subject" id="subject-promises" value="Promises">Promises
+          </label> <br>
+          <label for="subject-react">
+            <input type="checkbox" name="subject" class="subject" id="subject-react" value="React">React
+          </label>
+          <label for="subject-sql">
+            <input type="checkbox" name="subject" class="subject" id="subject-sql" value="SQL">SQL
+          </label>
+          <label for="subject-python">
+            <input type="checkbox" name="subject" class="subject" id="subject-python" value="Python">Python
+          </label>
+        </div>
       </div>
 
-      <div>
-        <p id="label-content">Qual conteúdo você está com mais vontade de aprender?</p>
-        <label for="subject-hofs">
-          <input type="checkbox" name="subject" class="subject" id="subject-hofs" value="HoFs">HoFs
-        </label>
-        <label for="subject-jest">
-          <input type="checkbox" name="subject" class="subject" id="subject-jest" value="Jest">Jest
-        </label>
-        <label for="subject-promises">
-          <input type="checkbox" name="subject" class="subject" id="subject-promises" value="Promises">Promises
-        </label>
-        <label for="subject-react">
-          <input type="checkbox" name="subject" class="subject" id="subject-react" value="React">React
-        </label>
-        <label for="subject-sql">
-          <input type="checkbox" name="subject" class="subject" id="subject-sql" value="SQL">SQL
-        </label>
-        <label for="subject-python">
-          <input type="checkbox" name="subject" class="subject" id="subject-python" value="Python">Python
-        </label>
-      </div>
+      <hr>
 
-      <div>
+      <div id="radios-container">
         <span id="label-rate">Como você avalia a Trybewarts?</span>
         <label for="rate-1">
           <input type="radio" name="rate" id="rate-1" value="1">1
@@ -108,7 +120,7 @@
         </label>
       </div>
 
-      <label class="textarea" for="textarea">Deixe seu comentário:<br>
+      <label id="textarea-container" class="textarea" for="textarea">Deixe seu comentário:<br>
         <textarea name="comment" id="textarea" maxlength="500" placeholder="Máximo 500 caracteres!"></textarea><br>
         <span id="counter">500</span>
       </label>
@@ -120,6 +132,7 @@
 
       <button type="submit" id="submit-btn" disabled>Enviar</button>
     </form>
+
     <img src="images/trybewarts-colored.svg" id="trybewarts-forms-logo"
       alt="Logo da Trybewarts com o texto discere codificare laborare">
   </main>

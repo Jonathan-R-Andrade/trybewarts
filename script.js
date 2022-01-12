@@ -58,6 +58,10 @@ function obterDadosFormulario(form) {
 
 // Mostra os dados do formulário quando clicar no botão enviar
 function mostrarDadosFormulario(event) {
+  if (event.target.textContent === 'Voltar') {
+    return;
+  }
+
   const { form } = event.target;
   const dados = obterDadosFormulario(form);
   form.innerHTML = '';
@@ -66,6 +70,7 @@ function mostrarDadosFormulario(event) {
     const p = document.createElement('p');
     p.append(document.createTextNode(`${entrie[0]}: ${entrie[1]}`));
     form.appendChild(p);
+    form.appendChild(document.createElement('hr'));
   });
   event.target.innerHTML = 'Voltar';
   form.appendChild(event.target);
