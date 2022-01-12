@@ -30,7 +30,50 @@ function atualizarContadorTextarea() {
   TEXTAREA_COUNTER.textContent = 500 - TEXTAREA.value.length;
 }
 
+// Retorna as matérias selecionadas
+function obterMaterias(form) {
+  const subjects = form.subject;
+  const retorno = [];
+  for (const subject of subjects) {
+    if (subject.checked) {
+      retorno.push(subject.value);
+    }
+  }
+  return retorno.join(', ');
+}
+
+// Retorna um objeto com os dados no formulário
+function obterDadosFormulario(form) {
+  const dados = {};
+  dados["Nome"] = `${form.name.value} ${form.lastname.value}`;
+  dados["Email"] = form.email.value;
+  dados["Casa"] = form.house.value;
+  dados["Família"] = form.family.value;
+  dados["Matérias"] = obterMaterias(form);
+  dados["Avaliação"] = form.rate.value;
+  dados["Observações"] = form.comment.value;
+  return dados;
+}
+
+// Mostra os dados do formulário quando clicar no botão enviar
+function mostrarDadosFormulario(event) {
+  const form = event.target.form;
+  const dados = obterDadosFormulario(form);
+  form.innerHTML = '';
+
+  for (const dado in dados) {
+    const p = document.createElement('p');
+    p.append(document.createTextNode(`${dado}: ${dados[dado]}`));
+    form.appendChild(p);
+  }
+  event.target.innerHTML = "Voltar";
+  form.appendChild(event.target);
+
+  event.preventDefault();
+}
+
 // Adicionando ouvintes
 BTN_ENTRAR.addEventListener('click', fazerLogin);
 INPUT_PERMISSAO.addEventListener('input', ativarDesativarBtnEnviar);
 TEXTAREA.addEventListener('input', atualizarContadorTextarea);
+BTN_ENVIAR.addEventListener('click', mostrarDadosFormulario);
