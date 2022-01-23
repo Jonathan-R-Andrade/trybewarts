@@ -9,6 +9,9 @@
 
 body {
   font-size: 17px;
+  padding-bottom: 50px;
+  max-width: 1400px;
+  margin: auto;
 }
 
 input , select , button , textarea {
@@ -87,21 +90,21 @@ main #trybewarts-forms-logo {
   padding: 10px;
 }
 
-#evaluation-form .default-input {
+.default-input {
   padding: 5px 10px;
-  margin: 4px 5px;
   border: 2px solid black;
   outline: none;
   border-radius: 10px;
-  min-width: 100px;
+  background-color: white;
+  width: 100%;
 }
 
 #evaluation-form .default-input:focus {
   border: 2px solid purple;
 }
 
-#evaluation-form div {
-  width: 100%;
+#house {
+  margin-left: 5px;
 }
 
 #evaluation-form #name-lastname-container , #evaluation-form #email-house-container {
@@ -110,7 +113,7 @@ main #trybewarts-forms-logo {
   align-items: center;
 }
 
-#evaluation-form #name-lastname-container * , #evaluation-form #email-house-container * {
+#name-lastname-container > * , #email-house-container > * {
   width: 50%;
   box-sizing: border-box;
   margin: 4px 5px;
@@ -130,12 +133,18 @@ main #trybewarts-forms-logo {
   line-height: 30px;
 }
 
-#evaluation-form #family-subject-container label {
+#evaluation-form #family-subject-container div {
+  width: 100%;
+}
+
+#family-subject-container div:nth-child( 2 ) label {
   margin-right: 20px;
+  white-space: nowrap;
 }
 
 #evaluation-form #radios-container label {
   margin-left: 5px;
+  white-space: nowrap;
 }
 
 #evaluation-form #textarea-container {
@@ -180,10 +189,37 @@ main #trybewarts-forms-logo {
 
 /* footer */
 footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  text-align: center;
+  height: 40px;
   background-color: rgb(60, 64, 74);
   color: white;
+}
+
+@media screen and ( max-width : 1000px ) {
+
+  main #trybewarts-forms-logo {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    width: 100%;
+    opacity: 0.1;
+  }
+}
+
+@media screen and ( max-width : 768px ) {
+
+  #trybewarts-header-title {
+    display: none;
+  }
 }
