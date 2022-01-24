@@ -67,12 +67,20 @@ function mostrarDadosFormulario(event) {
   form.innerHTML = '';
 
   Object.entries(dados).forEach((entrie) => {
+    const h4 = document.createElement('h3');
+    h4.style.textAlign = 'left';
+    h4.style.padding = '0';
+    h4.style.marginBottom = '5px';
+    h4.style.color = 'purple';
+    h4.append(`${entrie[0]}:`);
     const p = document.createElement('p');
-    p.append(document.createTextNode(`${entrie[0]}: ${entrie[1]}`));
+    p.style.wordBreak = 'break-word';
+    p.append(`${entrie[1]}`);
+    form.appendChild(h4);
     form.appendChild(p);
     form.appendChild(document.createElement('hr'));
   });
-  event.target.innerHTML = 'Voltar';
+  event.target.textContent = 'Voltar';
   form.appendChild(event.target);
 
   event.preventDefault();
