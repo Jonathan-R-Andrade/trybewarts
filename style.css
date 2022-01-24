@@ -107,6 +107,18 @@ main #trybewarts-forms-logo {
   padding: 10px;
 }
 
+#evaluation-form > p {
+  word-break: break-word;
+}
+
+#evaluation-form > p span {
+  margin-bottom: 5px;
+  color: purple;
+  word-break: normal;
+  display: block;
+  font-size: 20px;
+}
+
 .default-input {
   padding: 5px 10px;
   border: 2px solid black;
