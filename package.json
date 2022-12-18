@@ -1,23 +1,19 @@
 {
-  "name": "sd-0x-project-trybewarts-rubric",
-  "version": "1.0.0",
-  "description": "Ao iniciar este projeto, você concorda com as diretrizes do Código de Ética e Conduta e do Manual da Pessoa Estudante da Trybe.",
-  "main": "script.js",
+  "name": "trybewarts",
   "scripts": {
     "lint": "eslint --no-inline-config --no-error-on-unmatched-pattern -c .eslintrc.json . --ext .js, .jsx",
     "lint:styles": "stylelint **/*.css --config .stylelintrc.json --ignore-disables --allow-empty-input"
   },
+  "homepage": "https://jonathan-r-andrade.github.io/trybewarts",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/betrybe/sd-0x-project-trybewarts-rubric.git"
+    "url": "https://github.com/jonathan-r-andrade/trybewarts.git"
   },
-  "keywords": [],
-  "author": "",
+  "contributors": [
+    "Jonathan R. Andrade",
+    "Abdel Hafiane"
+  ],
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/betrybe/sd-0x-project-trybewarts-rubric/issues"
-  },
-  "homepage": "https://github.com/betrybe/sd-0x-project-trybewarts-rubric#readme",
   "devDependencies": {
     "eslint": "6.8.0",
     "eslint-config-airbnb-base": "14.2.1",
