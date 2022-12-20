@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trybewarts</title>
+  <link rel="stylesheet" href="css/style.css">
+  <script src="js/script.js" defer></script>
+</head>
+
+<body>
+
+  <header class="header">
+    <a href="">
+      <img src="images/trybewarts-header-logo.svg" alt="Logotipo da Trybewarts" class="trybewarts-header-logo">
+    </a>
+    <h1 id="trybewarts-header-title">Trybewarts</h1>
+    <div id="login-form">
+      <input type="checkbox" id="show-form" style="position: absolute; left: -1000px;" autocomplete="off">
+      <label for="show-form">
+        <div></div>
+      </label>
+      <form action="" class="trybewarts-login">
+        <input type="email" name="email" id="email" placeholder="Email">
+        <input type="password" name="password" id="senha" placeholder="Senha">
+        <button type="submit" id="btn-entrar">Entrar</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <form action="" method="GET" id="evaluation-form">
+      <h3>Formulário de Avaliação</h3>
+
+      <div id="name-lastname-container">
+        <input type="text" name="name" id="input-name" class="default-input" placeholder="Nome">
+        <input type="text" name="lastname" id="input-lastname" class="default-input" placeholder="Sobrenome">
+      </div>
+
+      <div id="email-house-container">
+        <input type="email" name="email" id="input-email" class="default-input" placeholder="Email">
+        <div id=house-container>
+          <span>Casa:</span>
+          <select name="house" id="house" class="default-input">
+            <option value="Gitnória" id="gitnoria-house">Gitnória</option>
+            <option value="Reactpuff" id="reactpuff-house">Reactpuff</option>
+            <option value="Corvinode" id="corvinode-house">Corvinode</option>
+            <option value="Pytherina" id="pytherina-house">Pytherina</option>
+          </select>
+        </div>
+      </div>
+
+      <hr>
+
+      <div id="family-subject-container">
+        <div>
+          <p id=label-family>Qual sua família?</p>
+          <label for="family-frontend">
+            <input type="radio" name="family" value="Frontend" id="family-frontend">Família Frontend<br>
+          </label>
+          <label for="family-backend">
+            <input type="radio" name="family" value="Backend" id="family-backend">Família Backend<br>
+          </label>
+          <label for="family-fullStack">
+            <input type="radio" name="family" value="FullStack" id="family-fullStack">Família FullStack
+          </label>
+        </div>
+
+        <div>
+          <p id="label-content">Qual conteúdo você está com mais vontade de aprender?</p>
+          <label for="subject-hofs">
+            <input type="checkbox" name="subject" class="subject" id="subject-hofs" value="HoFs">HoFs
+          </label>
+          <label for="subject-jest">
+            <input type="checkbox" name="subject" class="subject" id="subject-jest" value="Jest">Jest
+          </label>
+          <label for="subject-promises">
+            <input type="checkbox" name="subject" class="subject" id="subject-promises" value="Promises">Promises
+          </label> <br>
+          <label for="subject-react">
+            <input type="checkbox" name="subject" class="subject" id="subject-react" value="React">React
+          </label>
+          <label for="subject-sql">
+            <input type="checkbox" name="subject" class="subject" id="subject-sql" value="SQL">SQL
+          </label>
+          <label for="subject-python">
+            <input type="checkbox" name="subject" class="subject" id="subject-python" value="Python">Python
+          </label>
+        </div>
+      </div>
+
+      <hr>
+
+      <div id="radios-container">
+        <span id="label-rate">Como você avalia a Trybewarts?</span>
+        <label for="rate-1">
+          <input type="radio" name="rate" id="rate-1" value="1">1
+        </label>
+        <label for="rate-2">
+          <input type="radio" name="rate" id="rate-2" value="2">2
+        </label>
+        <label for="rate-3">
+          <input type="radio" name="rate" id="rate-3" value="3">3
+        </label>
+        <label for="rate-4">
+          <input type="radio" name="rate" id="rate-4" value="4">4
+        </label>
+        <label for="rate-5">
+          <input type="radio" name="rate" id="rate-5" value="5">5
+        </label>
+        <label for="rate-6">
+          <input type="radio" name="rate" id="rate-6" value="6">6
+        </label>
+        <label for="rate-7">
+          <input type="radio" name="rate" id="rate-7" value="7">7
+        </label>
+        <label for="rate-8">
+          <input type="radio" name="rate" id="rate-8" value="8">8
+        </label>
+        <label for="rate-9">
+          <input type="radio" name="rate" id="rate-9" value="9">9
+        </label>
+        <label for="rate-10">
+          <input type="radio" name="rate" id="rate-10" value="10">10
+        </label>
+      </div>
+
+      <label id="textarea-container" class="textarea" for="textarea">Deixe seu comentário:<br>
+        <textarea name="comment" id="textarea" maxlength="500" placeholder="Máximo 500 caracteres!"></textarea><br>
+        <span id="counter">500</span>
+      </label>
+
+      <div>
+        <label for="agreement" id="label-infos">Você concorda com o uso das informações acima?</label>
+        <input name="agree" type="checkbox" id="agreement" />
+      </div>
+
+      <button type="submit" id="submit-btn" disabled>Enviar</button>
+    </form>
+
+    <img src="images/trybewarts-colored.svg" id="trybewarts-forms-logo"
+      alt="Logo da Trybewarts com o texto discere codificare laborare">
+  </main>
+
+  <footer>Direitos reservados à Trybewarts©</footer>
+
+</body>
+
+</html>
